@@ -1,0 +1,36 @@
+26.	Write an R Program to create Reference Class and modify its Methods.
+Reference class:
+
+Defining reference class is similar to defining a S4 class. Instead of setClass() we use the setRefClass() function.
+setRefClass("student")
+Member variables of a class, if defined, need to be included in the class definition. Member variables of reference class are called fields (analogous to slots in S4 classes).
+
+The function setRefClass() returns a generator function which is used to create objects of that class.
+
+Another   Program
+employeeRC <- setRefClass("employeeRC",
+fields=list(name="character",age="numeric",
+department="character",emp_id="numeric"),
+methods=list(
+show = function(){
+  cat("name: ", name, "\n")
+  cat("age: ", age,"\n")
+  cat("department: ", department,"\n")
+  cat("Id: ", emp_id,"\n")
+}
+))
+emp4 <- employeeRC(name="jimmy",age=26,department="RnD"
+,emp_id=00342)
+show(emp4)
+emp4$name<- "B.S.Rao"
+emp4$emp_id=01617
+emp4
+out put
+name:  jimmy 
+age:  26 
+department:  RnD 
+Id:  342 
+name:  B.S.Rao 
+age:  26 
+department:  RnD 
+Id:  1617 
