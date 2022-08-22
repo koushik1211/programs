@@ -1,19 +1,44 @@
-24.	Write an R Program to write a own generic function in S4Class.
-#The function setClass() returns a generator function.
-student <- setClass("student", slots=list(name="character", age="numeric", GPA="numeric"))
-#We can write our own method using setMethod() helper function.
-#You can list all the S4 generic functions and methods available, using the function showMethod
-setMethod("show","student",
-function(object) {
-cat(object@name, "\n")
-cat(object@age, "years old\n")
-cat("GPA:", object@GPA, "\n")
-}
-)
-s <- new("student",name="John", age=21, GPA=3.5)
- s   
-Output:
-	John 
-	21 years old
-	GPA: 3.5 
+Aim: Implement an Applet program that calculates the factorial of a given number
 
+PROGRAM:
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+public class Fact extends Applet implements ActionListener 
+{ 
+Label l1, l2, l3;
+TextField tf1, tf2;
+Button b1;
+public void init() 
+{ 
+setSize(400, 200);
+FlowLayout g = new FlowLayout();
+setLayout(g);
+l1 = new Label("Enter Value"); 
+l1.setForeground(Color.BLUE); 
+add(l1);
+tf1 = new TextField(5); 
+tf1.setText("0"); 
+add(tf1);
+b1 = new Button("Compute"); 
+b1.addActionListener(this); 
+add(b1);
+l2 = new Label("factorial: "); 
+l2.setForeground(Color.BLUE);
+add(l2);
+tf2 = new TextField(5); 
+add(tf2);
+}
+public void actionPerformed(ActionEvent ae) 
+{ 
+long n = Integer.parseInt(tf1.getText());
+long f = 1; 
+while (n != 0) 
+{
+f = f * n;
+n--;
+}
+44
+tf2.setText(String.valueOf(f));
+}
+}
