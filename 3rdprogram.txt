@@ -1,0 +1,102 @@
+Software Development Cycle
+ When you use the Keil µVision, the project development cycle is roughly the same as it is for any other 
+software development project.
+ Create a project, select the target chip from the device database, and configure the tool settings. 
+ Create source files in C or assembly. 
+ Build your application with the project manager. 
+ Correct errors in source files. 
+ Test the linked application. 
+
+
+µVision IDE
+The µVision IDE combines project management, a rich-featured editor with interactive error 
+correction, option setup, make facility, and on-line help. Use µVision to create your source files and 
+organize them into a project that defines your target application. µVision automatically compiles, 
+assembles, and links your embedded application and provides a single focal point for your 
+development efforts.
+
+
+C51 Compiler & A51 Macro Assembler
+Source files are created by the µVision IDE and are passed to the C51 Compiler or A51 Macro 
+Assembler. The compiler and assembler process source files and create relocatable object files. The 
+Keil C51 Compiler is a full ANSI implementation of the C programming language that supports all 
+standard features of the C language. In addition, numerous features for direct support of the 8051 
+architecture have been added. The Keil A51 macro assembler supports the complete instruction set 
+of the 8051 and all derivatives.
+
+
+Start µVision
+
+Create a Project File
+To create a new project file select from the µVision menu: Project – New Project- This opens a 
+standard Windows dialog that asks you for the new project file name. Use a separate folder for each 
+project. µVision creates a new project file with the name NAME.UV2 which contains a default 
+target and file group name. You can see these names in the Project Workspace – Files.
+
+Select a Device
+When you create a new project µVision asks you to select a CPU for your project. The Select Device dialog 
+box shows the µVision device database. Just select the microcontroller you use. Example shows the 
+AT89C51 controller. This selection sets necessary tool options for the AT89C51 device and simplifies in this 
+way the tool configuration. When you create a new project, µVision may automatically add the correct device 
+specific CPU startup code for you.
+
+Create New Source Files
+You may create a new source file with the menu option File – New. This opens an empty editor 
+window where you can enter your source code. µVision enables the C color syntax highlighting 
+when you save your file with the dialog File – Save As… under a filename with the extension 
+*.asm. We are saving our example file under the name MAIN.asm.
+ Once you have created your source file you can add this file to your project. µVision offers 
+several ways to add source files to a project. For example, you can select the file group in the Project 
+Workspace – Files page and click with the right mouse key to open a local menu. The option Add 
+Files opens the standard files dialog. Select the file MAIN.asm you have just created.
+
+
+Build Project and Create a HEX File
+Typical, the tool settings under Options – Target are all you need to start a new application. You 
+may translate all source files and line the application with a click on the Build Target toolbar icon. 
+When you build an application with syntax errors, µVision will display errors and warning messages 
+in the Output Window – Build page. A double click on a message line opens the source file on the 
+correct location in a µVision editor window.
+Once you have successfully generated your application you can start debugging, now you may 
+modify existing source code or add new source files to the project. The Build Target toolbar button 
+translates only modified or new source files and generates the executable file. µVision maintains a 
+file dependency list and knows all include files used within a source file. Even the tool options are 
+saved in the file dependency list, so that µVision rebuilds files only when needed. With the Rebuild 
+Target command, all source files are translated, regardless of modifications.
+
+
+Start Debug Mode
+You start the debug mode of µVision with the Debug – Start/Stop Debug Session command. Depending on 
+the Options for Target – Debug configuration, µVision will load the application program and run the startup 
+code. µVision saves the editor screen layout and restores the screen layout of the last debug session. If the 
+program execution stops, µVision opens an editor window with the source text or shows CPU instructions in 
+the disassembly window. The next executable statement is marked with a yellow arrow.
+
+
+EXECUTION PROCEDURE FOR 8051
+Writing a alp program into 8051:
+Switch on kit
+Press reset
+Press A (give starting address)
+Press enter
+Enter 1st mnemonic
+Press enter
+Enter 2nd mnemonic
+Press enter
+---
+---
+---
+Enter nth mnemonic
+Press enter
+Press enter
+Press enter
+Display: A D G M T S
+
+To compile:
+Press G (give starting address)
+Press enter
+Display: program executed 
+
+Result:
+Press R
+A, B, R0, -------, Rn
